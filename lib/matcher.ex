@@ -26,4 +26,11 @@ defmodule Matcher do
   def matcher(term) when is_integer(term) or is_float(term), do: 'matches on integer float is also true'
   def matcher(val) when map_size(val) == 0 when tuple_size(val) == 0, do: 'an empty map or tuple was found!'
 
+  @doc """
+    the tuples and lists that have content have not been matched allowing the below functions to execute.
+  """
+  def matcher(cool_list = [a, b, c] = [head | tail ] = [1,2,3]), do: { 'cool_list:', cool_list, 'a:', a, 'b:', b, 'c:', c, 'head:', head, 'tail:', tail}
+  def matcher(cool_tuple = { s, [a, b, c] = [head | tail ] = [1,2,3] }), do: { s, a, b, c, head, tail, cool_tuple}
+  # matcher({x, y, [1, 2, 3]})
+
 end
