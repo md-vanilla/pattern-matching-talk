@@ -1,6 +1,6 @@
 # Matcher
 
-Example of pattern matching for my elixir talk 😅
+Examples of pattern matching for my elixir talk 😅
 
 This project uses a mix task called matcher for active development. Instead of using iex and having to rebuild state each time I copy the state into the mix task. If this does not make any sense just follow the install instructions. 🙂 
 
