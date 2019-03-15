@@ -1,3 +1,4 @@
+import MyInteger, only: [is_even: 1]
 defmodule Matcher do
   @moduledoc """
   Documentation for Matcher.
@@ -12,7 +13,7 @@ defmodule Matcher do
   # Guards are a way to augment pattern matching with more complex checks.
   matcher function implements a bunch of different gaurds.
   """
-  def handle_match(number) when is_integer(number) and rem(number, 2) == 0, do: 'number was not dividable by 2'
+  def handle_match(number) when is_even(number), do: 'number was divisable by 2'
 
   def handle_match(term) when is_integer(term), do: { term, 'is integer'}
   def handle_match(term) when is_float(term), do: { term, 'converted to integer:', round(term) }

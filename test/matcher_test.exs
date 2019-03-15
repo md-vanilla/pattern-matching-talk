@@ -15,6 +15,9 @@ defmodule MatcherTest do
 
   describe "pattern matching gaurd examples" do
 
+    test "pattern match is_even using a gaurd" do
+      assert Matcher.handle_match(4) == 'number was divisable by 2'
+    end
     test "pattern match float using a gaurd" do
       assert Matcher.handle_match(5.2) == {5.2, 'converted to integer:', 5}
     end

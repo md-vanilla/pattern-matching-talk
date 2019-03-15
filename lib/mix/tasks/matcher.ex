@@ -8,6 +8,7 @@ defmodule Mix.Tasks.Matcher do
   end
 
   def run(_) do
+    matcher(4)
     matcher(5.2)
     matcher(5)
     matcher({})
