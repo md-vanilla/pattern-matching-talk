@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.PatternMatcher do
+defmodule Mix.Tasks.Matcher do
   use Mix.Task
 
   @shortdoc "runs the handle match  function many different ways."
