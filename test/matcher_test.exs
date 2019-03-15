@@ -13,8 +13,23 @@ defmodule MatcherTest do
     end
   end
 
-  describe "pattern matching gaurd examples" do
+  describe "pattern matching custom gaurd examples" do
+    test "pattern match string is_tree using a gaurd" do
+      assert Matcher.handle_match('tree') ==
+        'a --tree-- was found in the forest'
+    end
+    test "pattern match string is_not_tree using a gaurd" do
+      assert Matcher.handle_match('building') ==
+        'string found but --building-- was not found in the forest'
+    end
 
+  end
+
+  describe "pattern matching gaurd examples" do
+    test "pattern match is_even using a gaurd" do
+      assert Matcher.handle_match(4) ==
+        "number 4 was divisable by 2"
+    end
     test "pattern match float using a gaurd" do
       assert Matcher.handle_match(5.2) == {5.2, 'converted to integer:', 5}
     end
