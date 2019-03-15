@@ -3,7 +3,7 @@ defmodule Mix.Tasks.Matcher do
 
   @shortdoc "runs the handle match  function many different ways."
   def matcher( input ) do
-    Matcher.handle_match(input)
+    PatternMatcher.handle_match(input)
     |> IO.inspect()
   end
 

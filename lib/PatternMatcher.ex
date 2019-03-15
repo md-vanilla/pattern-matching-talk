@@ -1,8 +1,11 @@
 import MyInteger, only: [is_even: 1]
 import CheckTree, only: [is_tree: 1, is_not_tree: 1]
-defmodule Matcher do
+defmodule PatternMatcher do
   @moduledoc """
-  Documentation for Matcher.
+  Documentation for PatternMatcher.
+  Ideas for additional pattern matching:
+  1) witchcraft will provide additional syntax for matching and guards: https://github.com/expede/witchcraft
+  2) Other external libraries will have datastructures with patterns that can be pattern matched.
 
   https://hexdocs.pm/elixir/Kernel.html#summary
   Not included here,  is all of the functions from the kernal file.
