@@ -1,6 +1,6 @@
 import MyInteger, only: [is_even: 1]
 import CheckTree, only: [is_tree: 1, is_not_tree: 1]
-defmodule Matcher do
+defmodule PatternMatcher do
   @moduledoc """
   Documentation for Matcher.
 

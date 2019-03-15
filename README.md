@@ -10,7 +10,7 @@ Hopefully I have some tests before the meetup. 😅
 ```
 git clone 
 mix matcher
-mix tests
+mix test
 ```
 
 <!--
