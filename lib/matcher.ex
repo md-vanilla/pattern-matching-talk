@@ -1,4 +1,5 @@
 import MyInteger, only: [is_even: 1]
+import CheckTree, only: [is_tree: 1, is_not_tree: 1]
 defmodule Matcher do
   @moduledoc """
   Documentation for Matcher.
@@ -13,7 +14,8 @@ defmodule Matcher do
   # Guards are a way to augment pattern matching with more complex checks.
   matcher function implements a bunch of different gaurds.
   """
-  def handle_match(number) when is_even(number), do: 'number was divisable by 2'
+  def handle_match(number) when is_even(number), do: "number #{number} was divisable by 2"
+  def handle_match(number) when is_tree(number), do: 'a --#{number}-- was found in the forest'
 
   def handle_match(term) when is_integer(term), do: { term, 'is integer'}
   def handle_match(term) when is_float(term), do: { term, 'converted to integer:', round(term) }
@@ -26,5 +28,7 @@ defmodule Matcher do
   def handle_match(cool_list = [a, b, c] = [head | tail ] = [1,2,3]), do: { 'cool_list:', cool_list, 'a:', a, 'b:', b, 'c:', c, 'head:', head, 'tail:', tail}
   def handle_match(cool_tuple = { s, [a, b, c] = [head | tail ] = [1,2,3] }), do: { s, a, b, c, head, tail, cool_tuple}
   # matcher({x, y, [1, 2, 3]})
+
+  def handle_match(number) when is_not_tree(number), do: 'string found but --#{number}-- was not found in the forest'
 
 end
